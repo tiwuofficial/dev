@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Layout from 'components/common/layout';
 import styles from 'pages/about/index.module.css';
 import { getWorkList, Work } from 'lib/microcms';
@@ -20,7 +21,11 @@ export default function WorksPage(props: Props) {
 
       {workList.map((work) => (
         <div key={work.id}>
-          {work.title}
+          <Link href={`/works/${work.id}`}>
+            <a>
+              <p> {work.title}</p>
+            </a>
+          </Link>
         </div>
       ))}
     </Layout>

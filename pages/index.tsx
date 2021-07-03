@@ -6,8 +6,8 @@ export default function WorksPage() {
   return (
     <Layout>
       <Head>
-        <title>About</title>
-        <meta name="description" content="" />
+        <title>TIWU.DEV</title>
+        <meta name="description" content="tiwu.dev" />
       </Head>
       <h1 className={styles.h1}>TIWU</h1>
     </Layout>

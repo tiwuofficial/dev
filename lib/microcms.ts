@@ -21,10 +21,16 @@ export const getWorkList = async (): Promise<Work[]> => {
   return response.contents;
 };
 
+export const getWork = async (id: Work['id']): Promise<Work> => {
+  return await client.get({
+    endpoint: 'works',
+    contentId: id,
+  });
+};
+
 export type About = {
   text: string,
 }
-
 
 export const getAbout = async (): Promise<About> => {
   return await client.get({
