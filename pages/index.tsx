@@ -1,40 +1,15 @@
-import Head from 'next/head'
-import { getWorkList, Work } from 'lib/microcms';
+import Head from 'next/head';
 import Layout from 'components/common/layout';
-import styles from 'pages/index.module.css';
+import styles from 'pages/about/index.module.css';
 
-type Props = {
-  workList: Work[],
-}
-
-export default function Index(props: Props) {
-  const { workList } = props;
-
+export default function WorksPage() {
   return (
     <Layout>
       <Head>
-        <title>tiwu.dev</title>
+        <title>About</title>
+        <meta name="description" content="" />
       </Head>
-
-      <h1 className={styles.h1}>TIWU DEV</h1>
-
-      {workList.map((work) => (
-        <div key={work.id}>
-          {work.title}
-        </div>
-      ))}
+      <h1 className={styles.h1}>TIWU</h1>
     </Layout>
-  )
+  );
 }
-
-
-export const getStaticProps = async (): Promise<{
-  props: Props
-}> => {
-  const workList = await getWorkList();
-  return {
-    props: {
-      workList,
-    },
-  };
-};

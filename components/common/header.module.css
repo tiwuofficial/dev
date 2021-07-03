@@ -1,0 +1,12 @@
+.a {
+  color: #111;
+}
+
+.ul {
+  display: flex;
+  justify-content: center;
+}
+
+.li + .li {
+  margin-left: 8px;
+}

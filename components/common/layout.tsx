@@ -1,4 +1,5 @@
 import styles from 'components/common/layout.module.css';
+import Header from 'components/common/header';
 
 type Props = {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ export default function Layout(props: Props) {
   } = props;
   return (
     <div className={styles.wrap}>
-      <header>header</header>
+      <Header />
       <main className={styles.main}>{children}</main>
       <footer>footer</footer>
     </div>

@@ -20,3 +20,14 @@ export const getWorkList = async (): Promise<Work[]> => {
   });
   return response.contents;
 };
+
+export type About = {
+  text: string,
+}
+
+
+export const getAbout = async (): Promise<About> => {
+  return await client.get({
+    endpoint: 'about',
+  });
+};
