@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from 'components/common/layout';
-import styles from 'pages/about/index.module.css';
+import styles from 'pages/works/index.module.css';
 import { getWorkList, Work } from 'lib/microcms';
 
 type Props = {
@@ -19,15 +19,17 @@ export default function WorksPage(props: Props) {
       </Head>
       <h1 className={styles.h1}>Works</h1>
 
-      {workList.map((work) => (
-        <div key={work.id}>
-          <Link href={`/works/${work.id}`}>
-            <a>
-              <p> {work.title}</p>
-            </a>
-          </Link>
-        </div>
-      ))}
+      <ul className={styles.ul}>
+        {workList.map((work) => (
+          <li key={work.id}>
+            <Link href={`/works/${work.id}`}>
+              <a>
+                <p> {work.title}</p>
+              </a>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </Layout>
   );
 }

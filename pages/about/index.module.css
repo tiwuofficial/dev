@@ -1,6 +1,5 @@
 .h1 {
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 60px;
   font-weight: bold;
 }
 
@@ -8,5 +7,18 @@
   font-family: 'M PLUS 1p', sans-serif;
   font-size: 15px;
   line-height: 25px;
-  margin-top: 20px;
+  margin-left: 200px;
+  position: relative;
+}
+
+.text::before {
+  content: '';
+  width: 1px;
+  height: 300px;
+  background-color: #8e8e8e;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  transform: translate(-50%, -50%);
 }

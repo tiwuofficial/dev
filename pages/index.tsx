@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Layout from 'components/common/layout';
-import styles from 'pages/about/index.module.css';
+import styles from 'pages/index.module.css';
 
 export default function WorksPage() {
   return (
