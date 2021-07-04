@@ -29,6 +29,8 @@
 @media (max-width: 750px) {
   .main {
     grid-template-columns: none;
+    grid-template-rows: none;
+    padding: 20px 10px;
   }
 
   .children {

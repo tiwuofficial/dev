@@ -7,8 +7,3 @@
   display: grid;
   grid-template-rows: 50px 1fr 50px;
 }
-
-.footer {
-  display: flex;
-  justify-content: center;
-}

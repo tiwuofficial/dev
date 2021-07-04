@@ -30,9 +30,7 @@ export default function WorkPage(props: Props) {
           width={width}
           height={height}
           />
-        ) : (
-          <p className={styles.title}>{work.title}</p>
-        )}
+        ) : null}
         <p className={styles.linkWrap}>
           <a href={work.url} className={styles.link} target="_blank" rel="noreferrer">{work.url}</a>
         </p>

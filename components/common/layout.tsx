@@ -13,7 +13,6 @@ export default function Layout(props: Props) {
     <div className={styles.wrap}>
       <Header />
       {children}
-      <footer className={styles.footer}>footer</footer>
     </div>
   );
 };
