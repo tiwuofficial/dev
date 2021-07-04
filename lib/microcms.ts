@@ -49,6 +49,8 @@ export const getAbout = async (): Promise<About> => {
 export type Account = {
   id: string,
   service: string,
+  url: string,
+  account_id: string,
 }
 
 type AccountsAPIResponse = {

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Work } from 'lib/microcms';
+import styles from 'components/work/item.module.css';
 
 type Props = {
   work: Work,
@@ -16,13 +17,17 @@ export default function WorkItem(props: Props) {
   return (
     <Link href={`/works/${work.id}`}>
       <a>
-        <Image
+        {work.icon ? (
+          <Image
           src={`${work.icon.url}?w=${width}&h=${height}&fit=crop&q=${quality}`}
           quality={quality}
           alt={work.title}
           width={width}
           height={height}
-        />
+          />
+        ) : (
+          <p className={styles.title}>{work.title}</p>
+        )}
       </a>
     </Link>
   );
