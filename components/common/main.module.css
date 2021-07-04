@@ -30,7 +30,7 @@
   .main {
     grid-template-columns: none;
     grid-template-rows: none;
-    padding: 20px 10px;
+    padding: 20px 20px 60px;
   }
 
   .children {
