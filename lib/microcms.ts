@@ -15,6 +15,7 @@ export type Work = {
   id: string,
   title: string,
   url: string,
+  description: string,
   icon: Img,
 }
 

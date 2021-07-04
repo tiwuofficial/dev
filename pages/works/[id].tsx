@@ -1,7 +1,8 @@
+import Image from 'next/image';
 import Head from 'next/head';
 import Main from 'components/common/main';
 import { getWorkList, getWork, Work } from 'lib/microcms';
-import styles from './[id].module.css';
+import styles from 'pages/works/[id].module.css';
 
 type Props = {
   work: Work,
@@ -10,14 +11,37 @@ type Props = {
 export default function WorkPage(props: Props) {
   const { work } = props;
 
+  const width = 600;
+  const height = 100;
+  const quality = 100;
+
   return (
     <Main h1={work.title}>
-      <div>
-        <Head>
-          <title>{work.title}</title>
-          <meta name="description" content={`${work.title} - tiwu.dev`} />
-        </Head>
-        <p>hoge</p>
+      <Head>
+        <title>{work.title}</title>
+        <meta name="description" content={`${work.title} - tiwu.dev`} />
+      </Head>
+      <div className={styles.wrap}>
+        {work.icon ? (
+          <Image
+          src={`${work.icon.url}?w=${width}&h=${height}&fit=crop&q=${quality}`}
+          quality={quality}
+          alt={work.title}
+          width={width}
+          height={height}
+          />
+        ) : (
+          <p className={styles.title}>{work.title}</p>
+        )}
+        <p className={styles.linkWrap}>
+          <a href={work.url} className={styles.link} target="_blank" rel="noreferrer">{work.url}</a>
+        </p>
+        <div
+          className={styles.text}
+          dangerouslySetInnerHTML={{
+            __html: `${work.description}`,
+          }}
+        />
       </div>
     </Main>
   );
