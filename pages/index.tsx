@@ -1,15 +1,14 @@
 import Head from 'next/head';
-import Layout from 'components/common/layout';
+import MainTop from 'components/common/mainTop';
 import styles from 'pages/index.module.css';
 
 export default function WorksPage() {
   return (
-    <Layout>
+    <MainTop h1="TIWU">
       <Head>
         <title>TIWU.DEV</title>
         <meta name="description" content="tiwu.dev" />
       </Head>
-      <h1 className={styles.h1}>TIWU</h1>
-    </Layout>
+    </MainTop>
   );
 }

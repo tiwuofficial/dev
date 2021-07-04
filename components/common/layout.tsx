@@ -12,7 +12,7 @@ export default function Layout(props: Props) {
   return (
     <div className={styles.wrap}>
       <Header />
-      <main className={styles.main}>{children}</main>
+      {children}
       <footer className={styles.footer}>footer</footer>
     </div>
   );

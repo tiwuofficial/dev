@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Layout from 'components/common/layout';
+import Main from 'components/common/main';
 import { getWorkList, getWork, Work } from 'lib/microcms';
 import styles from './[id].module.css';
 
@@ -11,15 +11,15 @@ export default function WorkPage(props: Props) {
   const { work } = props;
 
   return (
-    <Layout>
+    <Main h1={work.title}>
       <div>
         <Head>
           <title>{work.title}</title>
           <meta name="description" content={`${work.title} - tiwu.dev`} />
         </Head>
-        <h1 className={styles.h1}>{work.title}</h1>
+        <p>hoge</p>
       </div>
-    </Layout>
+    </Main>
   );
 }
 

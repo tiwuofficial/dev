@@ -1,0 +1,44 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  padding: 100px 0;
+}
+
+.children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  position: relative;
+}
+
+.children::before {
+  content: '';
+  width: 1px;
+  height: 300px;
+  background-color: #8e8e8e;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+@media (max-width: 750px) {
+  .main {
+    grid-template-columns: none;
+  }
+
+  .children {
+    margin-top: 40px;
+  }
+
+  .children::before {
+    width: 240px;
+    height: 1px;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}

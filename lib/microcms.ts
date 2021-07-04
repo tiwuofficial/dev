@@ -37,3 +37,19 @@ export const getAbout = async (): Promise<About> => {
     endpoint: 'about',
   });
 };
+
+export type Account = {
+  id: string,
+  service: string,
+}
+
+type AccountsAPIResponse = {
+  contents: Account[]
+}
+
+export const getAccountList = async (): Promise<Account[]> => {
+  const response = await client.get<AccountsAPIResponse>({
+    endpoint: 'accounts',
+  });
+  return response.contents;
+};

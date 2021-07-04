@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Layout from 'components/common/layout';
+import Main from 'components/common/main';
 import styles from 'pages/about/index.module.css';
 import { getAbout, About } from 'lib/microcms';
 
@@ -11,19 +11,18 @@ export default function AboutPage(props: Props) {
   const { about } = props;
 
   return (
-    <Layout>
+    <Main h1="About">
       <Head>
         <title>About</title>
         <meta name="description" content="About" />
       </Head>
-        <h1 className={styles.h1}>About</h1>
         <div
           className={styles.text}
           dangerouslySetInnerHTML={{
             __html: `${about.text}`,
           }}
         />
-    </Layout>
+    </Main>
   );
 }
 
