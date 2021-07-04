@@ -5,9 +5,17 @@ const client = createClient({
   apiKey: process.env.MICROCMS_API_KEY ?? '',
 });
 
+type Img = {
+  url: string,
+  height: number,
+  width: number,
+}
+
 export type Work = {
   id: string,
   title: string,
+  url: string,
+  icon: Img,
 }
 
 type WorksAPIResponse = {

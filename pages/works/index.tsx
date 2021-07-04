@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import Main from 'components/common/main';
+import WorkItem from 'components/work/item';
 import styles from 'pages/works/index.module.css';
 import { getWorkList, Work } from 'lib/microcms';
 
@@ -19,12 +19,8 @@ export default function WorksPage(props: Props) {
       </Head>
       <ul className={styles.ul}>
         {workList.map((work) => (
-          <li key={work.id}>
-            <Link href={`/works/${work.id}`}>
-              <a>
-                <p> {work.title}</p>
-              </a>
-            </Link>
+          <li key={work.id} className={styles.li}>
+            <WorkItem work={work} />
           </li>
         ))}
       </ul>

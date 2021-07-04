@@ -1,6 +1,8 @@
 .h1 {
   font-size: 60px;
   line-height: 60px;
+  display: flex;
   font-weight: bold;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
