@@ -9,12 +9,13 @@ type Props = {
 
 export default function MainTop(props: Props) {
   const {
-    h1
+    children, h1
   } = props;
   return (
     <Layout>
       <main className={styles.main}>
         <H1>{h1}</H1>
+        {children}
       </main>
     </Layout>
   );

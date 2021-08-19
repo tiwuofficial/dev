@@ -25,6 +25,9 @@ class MyDocument extends Document {
           `,
             }}
           />
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="tiwu.dev" />
+          <meta name="twitter:card" content="summary_large_image" />
         </Head>
         <body>
           <Main />

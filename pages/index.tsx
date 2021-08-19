@@ -1,12 +1,11 @@
 import Head from 'next/head';
 import MainTop from 'components/common/mainTop';
-import styles from 'pages/index.module.css';
 
 export default function WorksPage() {
   return (
-    <MainTop h1="TIWU">
+    <MainTop h1="tiwu.dev">
       <Head>
-        <title>TIWU.DEV</title>
+        <title>tiwu.dev</title>
         <meta name="description" content="tiwu.dev" />
       </Head>
     </MainTop>

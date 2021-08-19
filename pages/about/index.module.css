@@ -2,3 +2,8 @@
   font-size: 16px;
   text-align: center;
 }
+@media (max-width: 750px) {
+  .text {
+    text-align: left;
+  }
+}
