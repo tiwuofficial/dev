@@ -15,6 +15,8 @@ export default function BlogPage(props: Props) {
       <Head>
         <title>{blog.title}</title>
         <meta name="description" content={`${blog.title} - tiwu.dev`} />
+        <meta property="og:url" content={`https://tiwu.dev/blogs/${blog.id}`} />
+        <meta property="og:title" content={`${blog.title} - tiwu.dev`} />
       </Head>
       {blog.bodyList.map((body, index) => (
         <div
