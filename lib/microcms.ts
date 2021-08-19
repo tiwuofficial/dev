@@ -37,6 +37,57 @@ export const getWork = async (id: Work['id']): Promise<Work> => {
   });
 };
 
+export type Blog = {
+  id: string,
+  title: string,
+  bodyList: string[],
+  updatedAt: Img,
+}
+
+type BlogAPIResponse = {
+  id: string,
+  title: string,
+  bodyList: {
+    fieldId: "html" | "richEditor",
+    richEditor: string,
+    html: string,
+  }[],
+  updatedAt: Img,
+}
+
+type BlogsAPIResponse = {
+  contents: BlogAPIResponse[]
+}
+
+const convertBlogFromResponse = (response: BlogAPIResponse): Blog => {
+  const bodyList = response.bodyList.map(body => {
+    return body.fieldId === "richEditor" ? body.richEditor : body.html;
+  });
+  return {
+    id: response.id,
+    title: response.title,
+    bodyList,
+    updatedAt: response.updatedAt
+  }
+}
+
+export const getBlogList = async (): Promise<Blog[]> => {
+  const response = await client.get<BlogsAPIResponse>({
+    endpoint: 'blogs',
+  });
+  return response.contents.map(content => {
+    return convertBlogFromResponse(content);
+  });
+};
+
+export const getBlog = async (id: Blog['id']): Promise<Blog> => {
+  const response = await client.get<BlogAPIResponse>({
+    endpoint: 'blogs',
+    contentId: id,
+  });
+  return convertBlogFromResponse(response);
+};
+
 export type About = {
   text: string,
 }

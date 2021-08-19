@@ -1,0 +1,18 @@
+.text {
+  margin-bottom: 20px;
+}
+
+.text a {
+  color: #0373f1;
+}
+
+.text ul {
+  list-style: unset;
+  padding: revert;
+}
+
+.text h2,
+.text p,
+.text ul {
+  margin: revert;
+}

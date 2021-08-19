@@ -27,6 +27,13 @@ export default function Header() {
           </Link>
         </li>
         <li className={styles.li}>
+          <Link href="/blogs">
+            <a className={styles.a}>
+              <p>Blogs</p>
+            </a>
+          </Link>
+        </li>
+        <li className={styles.li}>
           <Link href="/accounts">
             <a className={styles.a}>
               <p>Accounts</p>
