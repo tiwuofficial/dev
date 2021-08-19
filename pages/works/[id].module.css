@@ -30,3 +30,9 @@
 .text a {
   color: #0373f1;
 }
+
+@media (max-width: 750px) {
+  .text {
+    text-align: left;
+  }
+}
